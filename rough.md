@@ -27,3 +27,8 @@ it 'responds to the method release_bike' do
   docking_instance = DockingStation.new
   expect(docking_instance).to respond_to(:release_bike)
 end
+
+# dock feature test
+
+- dock method will take an argument of a bike that has name
+- dock method will store that name as an attribute of the DockingStation instance, using an instance variable

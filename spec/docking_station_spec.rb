@@ -2,29 +2,20 @@ require 'docking_station.rb'
 require 'bike.rb'
 
 describe DockingStation do
-  let(:docking_instance) {DockingStation.new}
-=begin
-  it 'responds to the method release_bike' do
-    docking_instance = DockingStation.new
-    expect(docking_instance).to respond_to(:release_bike)
-  end
-=end
+  #let(:subject) {DockingStation.new}
 
   it { is_expected.to respond_to :release_bike}
 
-  it 'gets a bike and expects bike to be working' do
-    #docking_instance = DockingStation.new
-    expect(docking_instance.release_bike.working?).to eq true
+  it 'expects a released bike to be working' do
+    #expect(subject.release_bike.working?).to eq true
+    expect(subject.release_bike).to be_working
   end
 
-  it { is_expected.to respond_to :dock}
+  it { is_expected.to respond_to(:dock).with(1).argument}
 
-  it 'take a bike as an argument and allow access to the bike using the .bike method' do
-    #docking_instance = DockingStation.new
+  it 'takes a bike as an argument and allows access to it' do
     bike_instance = Bike.new
-    docking_instance.dock(bike_instance)
-    expect(docking_instance.bike).to eq bike_instance
+    subject.dock(bike_instance)
+    expect(subject.bike).to eq bike_instance
   end
-
-
 end
