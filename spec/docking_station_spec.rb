@@ -21,7 +21,12 @@ describe DockingStation do
     it 'takes a bike as an argument and allows access to it' do
       bike = Bike.new
       subject.dock(bike)
-      expect(subject.bike).to eq bike
+      expect(subject.bikes.last).to eq bike
+    end
+
+    it 'raises an error when asked to dock a bike while being full' do
+      20.times { subject.dock(Bike.new) }
+      expect { subject.dock(Bike.new) }.to raise_error("Docking Station is full")
     end
   end
 end
