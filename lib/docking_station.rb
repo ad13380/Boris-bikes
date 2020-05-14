@@ -16,6 +16,8 @@ class DockingStation
   end
 
   def dock(bike)
+    bike.broken?
+    ##ask the question broke? yes or no. Lable bike as broken or working.
     fail "Docking Station is full" if full?
     bikes << bike
   end

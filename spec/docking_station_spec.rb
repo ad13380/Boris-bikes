@@ -28,6 +28,7 @@ describe DockingStation do
       DockingStation::DEFAULT_CAPACITY.times { subject.dock(Bike.new) }
       expect { subject.dock(Bike.new) }.to raise_error("Docking Station is full")
     end
+
   end
 
   it 'takes bike capacity as an argument when initialized' do
