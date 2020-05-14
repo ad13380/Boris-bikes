@@ -2,24 +2,16 @@ require 'bike.rb'
 require 'docking_station.rb'
 
 describe Bike do
-  it 'Checks if bike responds to .working method' do
-    expect(subject).to respond_to(:working)
+  describe '#working?' do
+    it {is_expected.to respond_to :working?}
   end
 
-  it 'Check if bike responds to .broken method' do
-    expect(subject).to respond_to(:broken)
+  describe '#broken' do
+    it {is_expected.to respond_to :broken}
+
+    it 'can be reported as broken' do
+      subject.broken
+      expect(subject.working?).to eq false
+    end
   end
-
-  it 'is working by default' do
-    expect(subject.working).to eq true
-  end
-
-  it 'changes from working to broken when .broken method is called' do
-    expect(subject.broken).to eq false
-  end
-
-    # checks if bike is broken
-    # if broken move to next
-
-
 end
