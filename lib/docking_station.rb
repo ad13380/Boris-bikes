@@ -11,8 +11,9 @@ class DockingStation
   end
 
   def release_bike
+    # check @working false?
     fail "Docking Station is empty" if empty?
-    bikes.pop
+    bikes.pop if check(bikes.last)
   end
 
   def dock(bike)
@@ -24,6 +25,14 @@ class DockingStation
 
   def full?
     bikes.count >= DEFAULT_CAPACITY
+  end
+
+  def check(bike)
+    if bike.working == true
+      return true
+    else
+      fail "bike broken"
+    end
   end
 
   def empty?

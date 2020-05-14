@@ -15,10 +15,11 @@ describe Bike do
   end
 
   it 'changes from working to broken when .broken method is called' do
-
-    # set to broken
-    # show that broken
-
+    expect(subject.broken).to eq false
   end
+
+    # checks if bike is broken
+    # if broken move to next
+
 
 end
