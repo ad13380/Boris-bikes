@@ -4,6 +4,6 @@ Week 1 pair programming project that emulates boris bikes, their docking station
 
 | Object | Message |
 | --- | ----------- |
-| Person | Title |
+| Person |  |
 | Bike | is_working? |
 | Docking Station | release_bike |
