@@ -20,7 +20,7 @@ class DockingStation
     bikes << bike
   end
 
-  private
+  private  
 
   def full?
     bikes.count >= capacity

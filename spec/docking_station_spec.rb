@@ -11,7 +11,7 @@ describe DockingStation do
     it 'expects a released bike to be working' do
       allow(bike).to receive(:working?).and_return(true)
       subject.dock(bike)
-      expect(subject.release_bike).to be_working # change to working?
+      expect(subject.release_bike).to be_working 
     end
 
     it 'raises an error when asked to release a bike while being empty' do
